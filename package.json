@@ -1,8 +1,9 @@
 {
   "name": "@rodrigogs/promise-pool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This promise pool keeps looping `Promise.all`'s promises until the last generator item is submitted to the processor.",
   "author": "Rodrigo Gomes da Silva<rodrigo.smscom@gmail.com>",
+  "repository": "https://github.com/rodrigogs/promise-pool",
   "license": "bsd-3-clause",
   "main": "index.js",
   "scripts": {
