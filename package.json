@@ -1,0 +1,26 @@
+{
+  "name": "@rodrigogs/promise-pool",
+  "version": "1.0.0",
+  "description": "This promise pool keeps looping `Promise.all`'s promises until the last generator item is submitted to the processor.",
+  "author": "Rodrigo Gomes da Silva<rodrigo.smscom@gmail.com>",
+  "license": "bsd-3-clause",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint . --ext .js",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "keywords": [
+    "promise",
+    "pool",
+    "poller",
+    "generator",
+    "async"
+  ],
+  "dependencies": {
+    "jest": "^25.1.0"
+  }
+}
