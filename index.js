@@ -47,7 +47,7 @@ module.exports = async ({ generator, processor, concurrency, killer }) => {
     do {
       ({ value, done } = await generator.next());
       if (done) return;
-      result = await processor(1000);
+      result = await processor(value);
       if (result === false || killer && await killer()) stop = true;
     } while (!stop);
   };
