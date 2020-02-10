@@ -43,12 +43,13 @@ module.exports = async ({ generator, processor, concurrency, killer }) => {
   let stop = false;
 
   const poller = async () => {
-    const { value, done } = await generator.next();
-    if (done) return;
-    const result = await processor(value);
-    if (killer && killer()) stop = true;
-    if (stop || result === false) return;
-    await poller();
+    let value, done, result;
+    do {
+      ({ value, done } = await generator.next());
+      if (done) return;
+      result = await processor(1000);
+      if (result === false || killer && killer()) stop = true;
+    } while (!stop);
   };
 
   await Promise.all(queue.map(poller));
